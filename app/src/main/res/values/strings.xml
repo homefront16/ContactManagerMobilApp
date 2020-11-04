@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">ContactManager</string>
+    <string name="Personal">Personal</string>
+    <string name="Business">Business</string>
+    <string name="Edit">Edit</string>
+    <string name="Add">Add</string>
+    <string name="BusinessContacts">Business Contacts</string>
+    <string name="PersonalContacts">Personal Contacts</string>
+    <string name="AddPersonalContact">Add Personal Contact</string>
+    <string name="Complete">Complete</string>
+    <string name="Cancel">Cancel</string>
+    <string name="ContactName">Enter Contact Full Name</string>
+    <string name="AddPhoneNumber">Enter the contacts phone number</string>
+    <string name="DateOfBirth">Date Of Birth</string>
+    <string name="Photograph">Photograph</string>
+    <string name="Location">Location</string>
+    <string name="Description">Contact Description</string>
+</resources>
