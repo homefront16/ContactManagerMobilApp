@@ -9,7 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.ContactManager">
-        <activity android:name=".AddContact"></activity>
+        <activity android:name=".ViewLocation"></activity>
+        <activity android:name=".AddPhoto" />
+        <activity android:name=".IndividualContact" />
+        <activity android:name=".AddContact" />
         <activity android:name=".PersonalContactList" />
         <activity android:name=".BusinessContactsList" />
         <activity android:name=".MainActivity">

@@ -8,11 +8,31 @@
     <string name="PersonalContacts">Personal Contacts</string>
     <string name="AddPersonalContact">Add Personal Contact</string>
     <string name="Complete">Complete</string>
-    <string name="Cancel">Cancel</string>
     <string name="ContactName">Enter Contact Full Name</string>
     <string name="AddPhoneNumber">Enter the contacts phone number</string>
     <string name="DateOfBirth">Date Of Birth</string>
     <string name="Photograph">Photograph</string>
     <string name="Location">Location</string>
     <string name="Description">Contact Description</string>
+    <string name="FullName">Full Name</string>
+    <string name="PhoneNumber">Phone Number</string>
+    <string name="Delete">Delete</string>
+    <string name="AddPhoto">Add Photo</string>
+    <string name="ImageView">Image View</string>
+    <string name="ClickToAddPhoto">Click to add a photograph</string>
+    <string name="title_activity_view_contact_location">ViewContactLocation</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="menu_home">Home</string>
+    <string name="menu_gallery">Gallery</string>
+    <string name="menu_slideshow">Slideshow</string>
+    <string name="AddressValue">Address</string>
+    <string name="Cancel">Cancel</string>
+    <string name="ContactFullName" />
+    <string name="ShowFullName">Show Contact Full Name</string>
 </resources>

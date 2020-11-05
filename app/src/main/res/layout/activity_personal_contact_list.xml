@@ -7,7 +7,7 @@
     tools:context=".PersonalContactList">
 
     <SearchView
-        android:id="@+id/searchView"
+        android:id="@+id/searchPersonalContacts"
         android:layout_width="282dp"
         android:layout_height="58dp"
         android:layout_marginTop="176dp"
@@ -23,12 +23,43 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.543"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/searchView">
+        app:layout_constraintTop_toBottomOf="@+id/searchPersonalContacts">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical" />
+            android:orientation="vertical" >
+
+            <Button
+                android:id="@+id/btnPersonalContact1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/ShowFullName" />
+
+            <Button
+                android:id="@+id/btnPersonalContact2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/ShowFullName" />
+
+            <Button
+                android:id="@+id/btnPersonalContact3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/ShowFullName" />
+
+            <Button
+                android:id="@+id/btnPersonalContact4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/ShowFullName" />
+
+            <Button
+                android:id="@+id/btnPersonalContact5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/ShowFullName" />
+        </LinearLayout>
     </ScrollView>
 
     <TextView
@@ -45,24 +76,24 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/btnEditBusinessContact2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="68dp"
-        android:layout_marginTop="108dp"
-        android:text="@string/Edit"
-        app:layout_constraintEnd_toStartOf="@+id/btnAddBusinessContact"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/btnAddBusinessContact2"
+        android:id="@+id/btnPersonalContactListAddContact"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="108dp"
         android:layout_marginEnd="68dp"
         android:text="@string/Add"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btnPersonalContactListEdit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="68dp"
+        android:layout_marginTop="108dp"
+        android:text="@string/Edit"
+        app:layout_constraintEnd_toStartOf="@+id/btnPersonalContactListAddContact"
+        app:layout_constraintHorizontal_bias="0.01"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
