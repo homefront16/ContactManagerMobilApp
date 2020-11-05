@@ -7,11 +7,11 @@
     tools:context=".AddContact">
 
     <TextView
-        android:id="@+id/tvAddPersonalContact"
+        android:id="@+id/tvAddContact"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="56dp"
-        android:text="@string/AddPersonalContact"
+        android:text="@string/AddContact"
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
@@ -20,31 +20,34 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/btnIndividualContactEdit"
+        android:id="@+id/btnAddContactCancel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="68dp"
         android:layout_marginTop="108dp"
         android:text="@string/Cancel"
-        app:layout_constraintEnd_toStartOf="@+id/btnIndividualContactDelete"
+        app:layout_constraintEnd_toStartOf="@+id/btnAddContactComplete"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/btnIndividualContactDelete"
+        android:id="@+id/btnAddContactComplete"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="108dp"
-        android:layout_marginEnd="40dp"
+        android:layout_marginEnd="52dp"
         android:text="@string/Complete"
+        app:layout_constraintBottom_toTopOf="@+id/tableLayout"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
 
     <TableLayout
+        android:id="@+id/tableLayout"
         android:layout_width="306dp"
         android:layout_height="403dp"
-        android:layout_marginBottom="132dp"
+        android:layout_marginBottom="28dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
@@ -67,7 +70,7 @@
             android:layout_height="match_parent">
 
             <Button
-                android:id="@+id/btnIndividualContactPhoneNumber"
+                android:id="@+id/btnAddContactPhoneNumber"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -79,7 +82,7 @@
             android:layout_height="match_parent">
 
             <Button
-                android:id="@+id/btnIndividualContactDateOfBirth"
+                android:id="@+id/btnAddContactDateOfBirth"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -91,7 +94,7 @@
             android:layout_height="match_parent">
 
             <Button
-                android:id="@+id/btnIndividualContactPhotograph"
+                android:id="@+id/btnAddContactPhotograph"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -103,7 +106,7 @@
             android:layout_height="match_parent">
 
             <Button
-                android:id="@+id/btnIndividualContactLocation"
+                android:id="@+id/btnAddContactLocation"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -115,7 +118,7 @@
             android:layout_height="match_parent">
 
             <Button
-                android:id="@+id/btnIndividualContactDescription"
+                android:id="@+id/btnAddContactDescription"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"

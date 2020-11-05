@@ -35,4 +35,5 @@
     <string name="Cancel">Cancel</string>
     <string name="ContactFullName" />
     <string name="ShowFullName">Show Contact Full Name</string>
+    <string name="AddContact">Add Contact</string>
 </resources>

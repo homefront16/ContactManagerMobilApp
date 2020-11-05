@@ -11,8 +11,7 @@ import android.widget.TextView;
 
 public class PersonalContactList extends AppCompatActivity {
 
-    Button btnPersonalContactListEdit, btnPersonalContactListAddContact, btnPersonalContact1,
-            btnPersonalContact2, btnPersonalContact3, btnPersonalContact4, btnPersonalContact5;
+    Button btnPersonalContactListEdit, btnPersonalContactListAddContact;
 
     SearchView searchPersonalContactList;
 
@@ -25,11 +24,7 @@ public class PersonalContactList extends AppCompatActivity {
 
         btnPersonalContactListEdit = findViewById(R.id.btnPersonalContactListEdit);
         btnPersonalContactListAddContact = findViewById(R.id.btnPersonalContactListAddContact);
-        btnPersonalContact1 = findViewById(R.id.btnPersonalContact1);
-        btnPersonalContact2 = findViewById(R.id.btnPersonalContact2);
-        btnPersonalContact3 = findViewById(R.id.btnPersonalContact3);
-        btnPersonalContact4 = findViewById(R.id.btnPersonalContact4);
-        btnPersonalContact5 = findViewById(R.id.btnPersonalContact5);
+
 
         searchPersonalContactList = findViewById(R.id.searchPersonalContacts);
 
@@ -38,16 +33,11 @@ public class PersonalContactList extends AppCompatActivity {
         btnPersonalContactListAddContact.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent goToAddPhoto = new Intent(getApplicationContext(), AddPhoto.class);
-                startActivity(goToAddPhoto);
+                Intent goToAddContact = new Intent(getApplicationContext(), AddContact.class);
+                startActivity(goToAddContact);
             }
         });
 
-        btnPersonalContact1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
 
-            }
-        });
     }
 }

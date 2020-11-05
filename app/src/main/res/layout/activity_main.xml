@@ -38,67 +38,15 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ScrollView
-        android:layout_width="284dp"
-        android:layout_height="410dp"
-        android:layout_marginTop="20dp"
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="285dp"
+        android:layout_height="406dp"
+        android:layout_marginBottom="80dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.543"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/searchPersonalContacts">
+        app:layout_constraintHorizontal_bias="0.563"
+        app:layout_constraintStart_toStartOf="parent" >
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical" >
+    </androidx.recyclerview.widget.RecyclerView>
 
-            <Button
-                android:id="@+id/btnMainContactName"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/ShowFullName" />
-
-            <Button
-                android:id="@+id/btnMainContactName2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/ShowFullName" />
-
-            <Button
-                android:id="@+id/btnMainContactName3"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/ShowFullName" />
-
-            <Button
-                android:id="@+id/btnMainContactName4"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/ShowFullName" />
-
-            <Button
-                android:id="@+id/btnMainContactName5"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/ShowFullName" />
-
-            <Button
-                android:id="@+id/btnMainContactName6"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/ShowFullName" />
-
-            <Button
-                android:id="@+id/btnMainContactName7"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/ShowFullName" />
-
-            <Button
-                android:id="@+id/btnMainContactName8"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/ShowFullName" />
-        </LinearLayout>
-    </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>

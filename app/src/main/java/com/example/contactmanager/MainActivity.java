@@ -10,9 +10,7 @@ import android.widget.SearchView;
 
 public class MainActivity extends AppCompatActivity {
 
-    Button btnPersonalContacts, btnBusinessContacts, btnMainContactName, btnMainContactName2,
-            btnMainContactName3, btnMainContactName4, btnMainCOntactName5, btnMainContactName6,
-            btnMainContactName7, btnMainContactName8;
+    Button btnPersonalContacts, btnBusinessContacts;
 
     SearchView searchMainActivity;
 
@@ -23,14 +21,7 @@ public class MainActivity extends AppCompatActivity {
 
         btnPersonalContacts = findViewById(R.id.btnPersonalContacts);
         btnBusinessContacts = findViewById(R.id.btnBusinessContacts);
-        btnMainContactName = findViewById(R.id.btnMainContactName);
-        btnMainContactName2 = findViewById(R.id.btnMainContactName2);
-        btnMainContactName3 = findViewById(R.id.btnMainContactName3);
-        btnMainContactName4 = findViewById(R.id.btnMainContactName4);
-        btnMainCOntactName5 = findViewById(R.id.btnMainContactName5);
-        btnMainContactName6 = findViewById(R.id.btnMainContactName6);
-        btnMainContactName7 = findViewById(R.id.btnMainContactName7);
-        btnMainContactName8 = findViewById(R.id.btnMainContactName8);
+
 
         searchMainActivity = findViewById(R.id.searchPersonalContacts);
 
