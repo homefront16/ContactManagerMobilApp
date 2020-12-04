@@ -38,15 +38,13 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:layout_width="285dp"
-        android:layout_height="406dp"
-        android:layout_marginBottom="80dp"
+    <ListView
+        android:id="@+id/lvContactList"
+        android:layout_width="371dp"
+        android:layout_height="391dp"
+        android:layout_marginBottom="48dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.563"
-        app:layout_constraintStart_toStartOf="parent" >
-
-    </androidx.recyclerview.widget.RecyclerView>
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

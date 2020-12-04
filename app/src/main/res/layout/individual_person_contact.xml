@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/et"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/ivPersonContactPhoto"
+            android:layout_width="match_parent"
+            android:layout_height="101dp"
+            android:contentDescription="@string/Photograph"
+            app:srcCompat="@drawable/avatar" />
+
+        <EditText
+            android:id="@+id/etPersonContactName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:autofillHints=""
+            android:ems="10"
+            android:hint="@string/ContactName"
+            android:inputType="textPersonName" />
+
+        <EditText
+            android:id="@+id/etPhoneNumber"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="@string/PhoneNumber"
+            android:inputType="textPersonName"
+            android:selectAllOnFocus="false" />
+
+        <EditText
+            android:id="@+id/etPersonContactDateOfBirth"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="@string/DateOfBirth"
+            android:inputType="textPersonName" />
+
+        <EditText
+            android:id="@+id/etPersonContactDescription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="@string/Description"
+            android:inputType="textPersonName" />
+
+        <EditText
+            android:id="@+id/etPersonContactStreet"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="@string/Street"
+            android:inputType="textPersonName" />
+
+        <EditText
+            android:id="@+id/etPersonContactCity"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="@string/City"
+            android:inputType="textPersonName" />
+
+        <EditText
+            android:id="@+id/etPersonContactState"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="@string/State"
+            android:inputType="textPersonName" />
+
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -36,4 +36,8 @@
     <string name="ContactFullName" />
     <string name="ShowFullName">Show Contact Full Name</string>
     <string name="AddContact">Add Contact</string>
+    <string name="Street">Contact Street Address</string>
+    <string name="City">Contact City Address</string>
+    <string name="State">Contact State</string>
+    <string name="Remove">Remove</string>
 </resources>

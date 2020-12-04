@@ -1,6 +1,7 @@
 package com.example.contactmanager;
 
 import android.app.Activity;
+import android.app.Person;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,11 +12,11 @@ import android.widget.TextView;
 
 import java.util.List;
 
-public class PersonAdapter extends BaseAdapter {
+public class BusinessContactListAdapter extends BaseAdapter {
     Activity mActivity;
-    List<BaseContact> myContactList;
+    List<BusinessContact> myContactList;
 
-    public PersonAdapter(Activity mActivity, List<BaseContact> myContactList){
+    public BusinessContactListAdapter(Activity mActivity, List<BusinessContact> myContactList){
         this.mActivity = mActivity;
         this.myContactList = myContactList;
     }
@@ -26,7 +27,7 @@ public class PersonAdapter extends BaseAdapter {
     }
 
     @Override
-    public BaseContact getItem(int position) {
+    public BusinessContact getItem(int position) {
         return myContactList.get(position);
     }
 
@@ -38,24 +39,28 @@ public class PersonAdapter extends BaseAdapter {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
 
-        View onePersonLine;
+        View oneBusinessContact;
 
         LayoutInflater inflater = (LayoutInflater) mActivity.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        onePersonLine = inflater.inflate(R.layout.person_line_item, parent, false);
+        oneBusinessContact = inflater.inflate(R.layout.business_contact_one_line, parent, false);
 
-        ImageView ivIcon = onePersonLine.findViewById(R.id.ivPhotoLineItem);
-        TextView tvName = onePersonLine.findViewById(R.id.tvNameLineItem);
-        TextView tvPhoneNumber = onePersonLine.findViewById(R.id.tvPhoneNumberLineItem);
-        //TextView tvDateOfBirth = onePersonLine.findViewById(R.id.tvDateOfBirthLineItem);
-       // TextView tvDescription = onePersonLine.findViewById(R.id.tvDescriptionLineItem);
-        TextView tvLocation = onePersonLine.findViewById(R.id.tvLocationLineItem);
 
-        BaseContact myContact = this.getItem(position);
 
+        BusinessContact myContact = this.getItem(position);
+
+
+        ImageView ivBusinessPhoto = oneBusinessContact.findViewById(R.id.ivBusinessOneLinePhoto);
+        TextView tvName = oneBusinessContact.findViewById(R.id.tvBusinessNameOneLine);
+        TextView tvURL = oneBusinessContact.findViewById(R.id.tvBusinessURLOneLine);
+        TextView tvBusinessHours = oneBusinessContact.findViewById(R.id.tvBusinessHoursOneLine);
+        TextView tvBusinessDays = oneBusinessContact.findViewById(R.id.tvBusinessDaysOneLine);
+        TextView tvBusinessPhone = oneBusinessContact.findViewById(R.id.tvBusinessPhoneOneLine);
 
         tvName.setText(myContact.name);
-        tvPhoneNumber.setText(myContact.phoneNumber);
-        tvLocation.setText(myContact.location.getCity() + ", " + myContact.location.getState());
+        tvURL.setText(myContact.getWebsiteURL());
+        tvBusinessHours.setText(myContact.getBusinessHours());
+        tvBusinessDays.setText(myContact.getBusinessDays());
+        tvBusinessPhone.setText(myContact.getPhoneNumber());
 
         int iconResourceNumbers [] = {
                 R.drawable.avatar,
@@ -89,8 +94,8 @@ public class PersonAdapter extends BaseAdapter {
                 R.drawable.youngman3,
                 R.drawable.youngman4
         };
-        ivIcon.setImageResource(iconResourceNumbers[position]);
+        ivBusinessPhoto.setImageResource(iconResourceNumbers[position]);
 
-        return onePersonLine;
+        return oneBusinessContact;
     }
 }

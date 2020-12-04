@@ -1,6 +1,7 @@
 package com.example.contactmanager;
 
 import android.app.Activity;
+import android.app.Person;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,11 +12,11 @@ import android.widget.TextView;
 
 import java.util.List;
 
-public class PersonAdapter extends BaseAdapter {
+public class PersonContactListAdapter extends BaseAdapter {
     Activity mActivity;
-    List<BaseContact> myContactList;
+    List<PersonContact> myContactList;
 
-    public PersonAdapter(Activity mActivity, List<BaseContact> myContactList){
+    public PersonContactListAdapter(Activity mActivity, List<PersonContact> myContactList){
         this.mActivity = mActivity;
         this.myContactList = myContactList;
     }
@@ -26,7 +27,7 @@ public class PersonAdapter extends BaseAdapter {
     }
 
     @Override
-    public BaseContact getItem(int position) {
+    public PersonContact getItem(int position) {
         return myContactList.get(position);
     }
 
@@ -38,24 +39,31 @@ public class PersonAdapter extends BaseAdapter {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
 
-        View onePersonLine;
+        View onePersonalContactLine;
 
         LayoutInflater inflater = (LayoutInflater) mActivity.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        onePersonLine = inflater.inflate(R.layout.person_line_item, parent, false);
+        onePersonalContactLine = inflater.inflate(R.layout.person_contact_one_line, parent, false);
 
-        ImageView ivIcon = onePersonLine.findViewById(R.id.ivPhotoLineItem);
-        TextView tvName = onePersonLine.findViewById(R.id.tvNameLineItem);
-        TextView tvPhoneNumber = onePersonLine.findViewById(R.id.tvPhoneNumberLineItem);
-        //TextView tvDateOfBirth = onePersonLine.findViewById(R.id.tvDateOfBirthLineItem);
-       // TextView tvDescription = onePersonLine.findViewById(R.id.tvDescriptionLineItem);
-        TextView tvLocation = onePersonLine.findViewById(R.id.tvLocationLineItem);
 
-        BaseContact myContact = this.getItem(position);
 
+        PersonContact myContact = this.getItem(position);
+       // etName, etDateOfBirth, etPhoneNumber, etDescription, etStreet, etCity, etState
+        ImageView ivPhoto = onePersonalContactLine.findViewById(R.id.ivPersonContactOneLinePhoto);
+        TextView tvName = onePersonalContactLine.findViewById(R.id.tvPersonContactOneLineName);
+        TextView tvDateOfBirth = onePersonalContactLine.findViewById(R.id.tvPersonContactOneLineDateOfBirth);
+        TextView tvPhoneNumber = onePersonalContactLine.findViewById(R.id.tvPersonContactOneLinePhoneNumber);
+        TextView tvDescription = onePersonalContactLine.findViewById(R.id.tvPersonContactOneLineDescription);
+        TextView tvStreet = onePersonalContactLine.findViewById(R.id.tvPersonContactOneLineStreet);
+        TextView tvCity = onePersonalContactLine.findViewById(R.id.tvPersonContactOneLineCity);
+        TextView tvState = onePersonalContactLine.findViewById(R.id.tvPersonContactOneLineState);
 
         tvName.setText(myContact.name);
+        tvDateOfBirth.setText(myContact.getDateOfBirth());
         tvPhoneNumber.setText(myContact.phoneNumber);
-        tvLocation.setText(myContact.location.getCity() + ", " + myContact.location.getState());
+        tvDescription.setText(myContact.getDescription());
+        tvStreet.setText(myContact.location.getStreet());
+        tvCity.setText(myContact.location.getCity());
+        tvState.setText(myContact.location.getState());
 
         int iconResourceNumbers [] = {
                 R.drawable.avatar,
@@ -89,8 +97,8 @@ public class PersonAdapter extends BaseAdapter {
                 R.drawable.youngman3,
                 R.drawable.youngman4
         };
-        ivIcon.setImageResource(iconResourceNumbers[position]);
+        ivPhoto.setImageResource(iconResourceNumbers[position]);
 
-        return onePersonLine;
+        return onePersonalContactLine;
     }
 }
