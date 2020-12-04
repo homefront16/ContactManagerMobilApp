@@ -35,7 +35,7 @@ public class PersonalContactList extends AppCompatActivity {
     List<PersonContact> personalContactList;
     List<PersonContact> updatedPersonalContactList;
     PersonContactListAdapter myAdapter;
-    Button btnPersonalContactListEdit, btnPersonalContactListAddContact;
+    Button btnPersonalContactListAddContact;
 
     SearchView searchPersonalContactList;
 
@@ -48,7 +48,7 @@ public class PersonalContactList extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_personal_contact_list);
 
-        btnPersonalContactListEdit = findViewById(R.id.btnPersonalContactListEdit);
+
         btnPersonalContactListAddContact = findViewById(R.id.btnPersonalContactListAddContact);
         searchPersonalContactList = findViewById(R.id.searchPersonalContacts);
         tvPersonalContactList = findViewById(R.id.tvPersonalContactList);

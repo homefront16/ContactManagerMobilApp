@@ -33,22 +33,10 @@
         android:id="@+id/btnPersonalContactListAddContact"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="108dp"
-        android:layout_marginEnd="68dp"
+        android:layout_marginTop="112dp"
+        android:layout_marginEnd="160dp"
         android:text="@string/Add"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/btnPersonalContactListEdit"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="68dp"
-        android:layout_marginTop="108dp"
-        android:text="@string/Edit"
-        app:layout_constraintEnd_toStartOf="@+id/btnPersonalContactListAddContact"
-        app:layout_constraintHorizontal_bias="0.01"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ListView
