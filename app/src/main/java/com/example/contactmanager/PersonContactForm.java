@@ -2,6 +2,9 @@ package com.example.contactmanager;
 
 import android.content.Context;
 import android.content.Intent;
+import android.location.Address;
+import android.location.Geocoder;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -27,6 +30,7 @@ import java.io.InputStream;
 import java.io.OutputStreamWriter;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 import java.util.Scanner;
 
 public class PersonContactForm extends AppCompatActivity {
@@ -35,7 +39,8 @@ public class PersonContactForm extends AppCompatActivity {
 
     int positionToEdit = -1;
 
-    Button btnAddContact, btnCancelPersonContact, btnRemovePersonContact;
+    Button btnAddContact, btnCancelPersonContact, btnRemovePersonContact, btnText, btnEmail, btnCall,
+    btnMap;
     EditText etName, etDateOfBirth, etPhoneNumber, etDescription, etStreet, etCity, etState;
     ImageView ivPersonContactPhoto;
 
@@ -48,6 +53,10 @@ public class PersonContactForm extends AppCompatActivity {
         btnAddContact = findViewById(R.id.btnAddPersonContact);
         btnCancelPersonContact = findViewById(R.id.btnCancelAddPersonContact);
         btnRemovePersonContact = findViewById(R.id.btnRemovePersonContact);
+        btnText = findViewById(R.id.btnText);
+        btnEmail = findViewById(R.id.btnEmail);
+        btnCall = findViewById(R.id.btnCall);
+        btnMap = findViewById(R.id.btnMap);
         etName = findViewById(R.id.etPersonContactName);
         etDateOfBirth = findViewById(R.id.etPersonContactDateOfBirth);
         etPhoneNumber = findViewById(R.id.etPhoneNumber);
@@ -64,7 +73,7 @@ public class PersonContactForm extends AppCompatActivity {
 
         Bundle incomingIntent = getIntent().getExtras();
         // capture incoming data
-        if(incomingIntent != null){
+        if (incomingIntent != null) {
 
             btnRemovePersonContact.setVisibility(View.VISIBLE);
             String sentName = incomingIntent.getString("name");
@@ -88,6 +97,39 @@ public class PersonContactForm extends AppCompatActivity {
 
         }
 
+        btnMap.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Uri geoLocation = Uri.parse("geo:0,0?q=City+Hall" + etCity.getText().toString() + "," + "+" + etState.getText().toString());
+
+                showMap(geoLocation);
+            }
+        });
+
+        btnEmail.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String[] myAddresses = new String[1];
+                myAddresses[0] = etName.getText().toString() + "@gmail.com";
+                sendEmail(myAddresses, "Hello from " + etName);
+            }
+        });
+
+        btnCall.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialPhoneNumber(etPhoneNumber.getText().toString());
+            }
+        });
+
+        btnText.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                composeMmsMessage(etPhoneNumber.getText().toString(), "Hello, I would to talk");
+            }
+        });
+
         btnCancelPersonContact.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -101,7 +143,7 @@ public class PersonContactForm extends AppCompatActivity {
                 Intent removeIntent = new Intent(v.getContext(), PersonalContactList.class);
 
                 removeIntent.putExtra("remove", String.valueOf(1));
-               // removeIntent.putExtra("edit", String.valueOf(positionToEdit));
+                // removeIntent.putExtra("edit", String.valueOf(positionToEdit));
 
 
                 listOfContacts.remove(positionToEdit);
@@ -117,7 +159,7 @@ public class PersonContactForm extends AppCompatActivity {
 
                 try {
                     FileOutputStream fileout = openFileOutput("personcontactcorrect2.json", MODE_PRIVATE);
-                    OutputStreamWriter outputWriter=new OutputStreamWriter(fileout);
+                    OutputStreamWriter outputWriter = new OutputStreamWriter(fileout);
                     om.writerWithDefaultPrettyPrinter().writeValue(outputWriter, contactsWrapper);
 
                     outputWriter.close();
@@ -155,7 +197,7 @@ public class PersonContactForm extends AppCompatActivity {
 
                 PersonContact addedContact = new PersonContact(newName, newPhoneNumber, newDateOfBirth, myListOfPhotos, myNewLocation, newDescription);
 
-               //add contact to list and then write the list to a JSON file
+                //add contact to list and then write the list to a JSON file
                 listOfContacts.add(addedContact);
                 AddressBook myAddressBook = new AddressBook(listOfContacts);
 
@@ -169,7 +211,7 @@ public class PersonContactForm extends AppCompatActivity {
 
                 try {
                     FileOutputStream fileout = openFileOutput("personcontactcorrect2.json", MODE_PRIVATE);
-                    OutputStreamWriter outputWriter=new OutputStreamWriter(fileout);
+                    OutputStreamWriter outputWriter = new OutputStreamWriter(fileout);
                     om.writerWithDefaultPrettyPrinter().writeValue(outputWriter, contactsWrapper);
 
                     outputWriter.close();
@@ -197,6 +239,37 @@ public class PersonContactForm extends AppCompatActivity {
             }
         });
     }
+    public void showMap(Uri geoLocation) {
+        Intent intent = new Intent(Intent.ACTION_VIEW);
+        intent.setData(geoLocation);
+        startActivity(intent);
+
+    }
+
+
+    private void sendEmail(String[] addresses, String subject) {
+        Intent intent = new Intent(Intent.ACTION_SENDTO);
+        intent.setData(Uri.parse("mailto:")); // only email apps should handle this
+        intent.putExtra(Intent.EXTRA_EMAIL, addresses);
+        intent.putExtra(Intent.EXTRA_SUBJECT, subject);
+        startActivity(intent);
+    }
+
+    public void dialPhoneNumber(String phoneNumber) {
+        Intent intent = new Intent(Intent.ACTION_DIAL);
+        intent.setData(Uri.parse("tel:" + phoneNumber));
+        startActivity(intent);
+
+    }
+
+    public void composeMmsMessage(String phoneNumber, String message) {
+        Intent intent = new Intent(Intent.ACTION_SENDTO);
+        intent.setData(Uri.parse("smsto:" + phoneNumber));  // This ensures only SMS apps respond
+        intent.putExtra("sms_body", message);
+        startActivity(intent);
+
+    }
+
 
     private List<BaseContact> getJsonData(){
            /*
